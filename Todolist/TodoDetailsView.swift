@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct TodoDetailsView: View {
-    @State var todo =  Todo(title: "Task 1")
+    @Binding var todo: Todo
     
     var body: some View {
         Form {
@@ -24,6 +24,6 @@ struct TodoDetailsView: View {
 
 struct TodoDetailsView_Previews: PreviewProvider {
     static var previews: some View {
-        TodoDetailsView()
+        TodoDetailsView(todo: .constant(Todo(title: "demo task")))
     }
 }

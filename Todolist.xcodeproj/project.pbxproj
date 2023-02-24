@@ -13,6 +13,7 @@
 		B78570E829A88CD4006770BA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B78570E729A88CD4006770BA /* Preview Assets.xcassets */; };
 		B78570EF29A88D9A006770BA /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B78570EE29A88D9A006770BA /* Todo.swift */; };
 		B78570F129A89539006770BA /* TodoDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B78570F029A89539006770BA /* TodoDetailsView.swift */; };
+		B78570F329A89DE0006770BA /* NewTodoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B78570F229A89DE0006770BA /* NewTodoView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		B78570E729A88CD4006770BA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B78570EE29A88D9A006770BA /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
 		B78570F029A89539006770BA /* TodoDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoDetailsView.swift; sourceTree = "<group>"; };
+		B78570F229A89DE0006770BA /* NewTodoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTodoView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 			children = (
 				B78570E029A88CD0006770BA /* TodolistApp.swift */,
 				B78570E229A88CD0006770BA /* ContentView.swift */,
+				B78570F229A89DE0006770BA /* NewTodoView.swift */,
 				B78570F029A89539006770BA /* TodoDetailsView.swift */,
 				B78570EE29A88D9A006770BA /* Todo.swift */,
 				B78570E429A88CD4006770BA /* Assets.xcassets */,
@@ -146,6 +149,7 @@
 				B78570E329A88CD0006770BA /* ContentView.swift in Sources */,
 				B78570EF29A88D9A006770BA /* Todo.swift in Sources */,
 				B78570E129A88CD0006770BA /* TodolistApp.swift in Sources */,
+				B78570F329A89DE0006770BA /* NewTodoView.swift in Sources */,
 				B78570F129A89539006770BA /* TodoDetailsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

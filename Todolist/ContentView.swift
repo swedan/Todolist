@@ -13,25 +13,50 @@ struct ContentView: View {
         Todo(title: "Pick uo son from school"),
         Todo(title: "Prepare for class", isComplted: true)
     ]
+    
+    @State var showSheet = false
+    
     var body: some View {
         NavigationView {
             List($todos) { $todo in
-                HStack{
-                    Image(systemName: todo.isComplted ? "checkmark.circle.fill" : "circle" )
-                    VStack{
-                        Text(todo.title)
-                            .strikethrough(todo.isComplted)
-                        Text(!todo.subTitle.isEmpty ? todo.subTitle : "")
-                            .font(.subheadline)
-                            .foregroundColor(.gray)
+                NavigationLink {
+                    TodoDetailsView(todo: $todo)
+                } label: {
+                    HStack{
+                        Image(systemName: todo.isComplted ? "checkmark.circle.fill" : "circle" )
+                        VStack{
+                            Text(todo.title)
+                                .strikethrough(todo.isComplted)
+                            Text(!todo.subTitle.isEmpty ? todo.subTitle : "")
+                                .font(.subheadline)
+                                .foregroundColor(.gray)
+                                .strikethrough(todo.isComplted)
+                        }
+                    }
+                    .onTapGesture {
+                        todo.isComplted.toggle()
                     }
                 }
-                .onTapGesture {
-                    todo.isComplted.toggle()
-                }
-                
             }
             .navigationTitle("Todos List")
+            .toolbar {
+                ToolbarItem(placement:.navigationBarLeading){
+                    EditButton()
+                }
+                    
+                ToolbarItem(placement:.navigationBarTrailing){
+                    Button{
+                        showSheet = true
+                    } label: {
+                        Image(systemName: "plus")
+                    }
+                }
+
+            }
+            
+            .sheet(isPresented: $showSheet){
+                NewTodoView()
+            }
         }
     }
 }
