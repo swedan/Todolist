@@ -14,8 +14,19 @@ struct ContentView: View {
         Todo(title: "Prepare for class", isComplted: true)
     ]
     var body: some View {
-        List(todos) { todo in
-            Text(todo.title)
+        NavigationView {
+            List($todos) { $todo in
+                HStack{
+                    Image(systemName: todo.isComplted ? "checkmark.circle.fill" : "circle" )
+                        .onTapGesture {
+                            todo.isComplted.toggle()
+                        }
+                    Text(todo.title)
+                    
+                        .strikethrough(todo.isComplted)
+                }
+            }
+            .navigationTitle("Todos List")
         }
     }
 }
