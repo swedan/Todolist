@@ -55,7 +55,7 @@ struct ContentView: View {
             }
             
             .sheet(isPresented: $showSheet){
-                NewTodoView()
+                NewTodoView(todos: $todos)
             }
         }
     }

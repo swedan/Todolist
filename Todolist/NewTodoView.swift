@@ -11,6 +11,9 @@ struct NewTodoView: View {
     @State var todoTitle = ""
     @State var todoSubTitle = ""
     
+    @Binding var todos: [Todo]
+    @Environment (\.dismiss) var dismiss
+    
     var body: some View {
         Form {
             Section ("Info"){
@@ -20,11 +23,13 @@ struct NewTodoView: View {
             
             Section ("Actions"){
                 Button ("Save"){
-                    
+                    let newTodo = Todo (title: todoTitle, subTitle: todoSubTitle)
+                    todos.append(newTodo)
+                    dismiss()
                 }
                 
                 Button ("Cancel", role: .destructive){
-                    
+                    dismiss()
                 }
             }
             
@@ -34,6 +39,6 @@ struct NewTodoView: View {
 
 struct NewTodoView_Previews: PreviewProvider {
     static var previews: some View {
-        NewTodoView()
+        NewTodoView(todos: .constant([]))
     }
 }
