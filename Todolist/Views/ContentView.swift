@@ -8,35 +8,19 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var todos = [
-        Todo(title: "But some grocary", subTitle: "Vegatables and corn"),
-        Todo(title: "Pick uo son from school"),
-        Todo(title: "Prepare for class", isComplted: true)
-    ]
+    @StateObject var todoManger = TodoManager()
+//    @State var todos = [
+//        Todo(title: "But some grocary", subTitle: "Vegatables and corn"),
+//        Todo(title: "Pick uo son from school"),
+//        Todo(title: "Prepare for class", isComplted: true)
+//    ]
     
     @State var showSheet = false
     
     var body: some View {
         NavigationView {
-            List($todos) { $todo in
-                NavigationLink {
-                    TodoDetailsView(todo: $todo)
-                } label: {
-                    HStack{
-                        Image(systemName: todo.isComplted ? "checkmark.circle.fill" : "circle" )
-                        VStack{
-                            Text(todo.title)
-                                .strikethrough(todo.isComplted)
-                            Text(!todo.subTitle.isEmpty ? todo.subTitle : "")
-                                .font(.subheadline)
-                                .foregroundColor(.gray)
-                                .strikethrough(todo.isComplted)
-                        }
-                    }
-                    .onTapGesture {
-                        todo.isComplted.toggle()
-                    }
-                }
+            List($todoManger.todos) { $todo in
+                TodoRowView(todo: $todo)
             }
             .navigationTitle("Todos List")
             .toolbar {
@@ -55,7 +39,7 @@ struct ContentView: View {
             }
             
             .sheet(isPresented: $showSheet){
-                NewTodoView(todos: $todos)
+                NewTodoView(todos: $todoManger.todos)
             }
         }
     }
