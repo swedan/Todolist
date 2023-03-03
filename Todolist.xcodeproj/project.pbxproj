@@ -38,6 +38,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B71D475329B1CA980037C95A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B78570E229A88CD0006770BA /* ContentView.swift */,
+				B78570F229A89DE0006770BA /* NewTodoView.swift */,
+				B78570F029A89539006770BA /* TodoDetailsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B71D475429B1CAC80037C95A /* Model and ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				B78570EE29A88D9A006770BA /* Todo.swift */,
+			);
+			path = "Model and ViewModel";
+			sourceTree = "<group>";
+		};
 		B78570D429A88CD0006770BA = {
 			isa = PBXGroup;
 			children = (
@@ -58,10 +76,8 @@
 			isa = PBXGroup;
 			children = (
 				B78570E029A88CD0006770BA /* TodolistApp.swift */,
-				B78570E229A88CD0006770BA /* ContentView.swift */,
-				B78570F229A89DE0006770BA /* NewTodoView.swift */,
-				B78570F029A89539006770BA /* TodoDetailsView.swift */,
-				B78570EE29A88D9A006770BA /* Todo.swift */,
+				B71D475329B1CA980037C95A /* Views */,
+				B71D475429B1CAC80037C95A /* Model and ViewModel */,
 				B78570E429A88CD4006770BA /* Assets.xcassets */,
 				B78570E629A88CD4006770BA /* Preview Content */,
 			);
