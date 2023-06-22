@@ -22,7 +22,7 @@ struct ContentView: View {
             List($todoManger.todos) { $todo in
                 TodoRowView(todo: $todo)
             }
-            .navigationTitle("Todos List")
+            .navigationTitle("Todos list")
             .toolbar {
                 ToolbarItem(placement:.navigationBarLeading){
                     EditButton()
